@@ -282,25 +282,47 @@
           </div>
 
           <p class="contact-note">
-            Dieses Formular ist aktuell ein Design-Demo für das Portfolio und noch nicht mit einem E-Mail-Dienst verbunden.
+            Nutze das Kontaktformular für Anfragen zu Kursen, Probestunden oder Einzeltraining.
           </p>
         </div>
 
-        <form class="contact-form" id="contactForm" novalidate>
+        <form
+          class="contact-form"
+          id="contactForm"
+          action="https://formspree.io/f/DEIN_FORM_ID"
+          method="POST"
+          novalidate
+        >
+          <input type="hidden" name="_subject" value="Neue Anfrage über Flow & Balance">
+          <input type="hidden" name="_language" value="de">
+          <input type="text" name="_gotcha" class="hidden-field" tabindex="-1" autocomplete="off">
+
           <div class="form-group">
-            <input id="name" name="name" type="text" required>
+            <input id="name" name="name" type="text" placeholder="Dein Name" required>
             <label for="name">Dein Name</label>
+            <small class="field-error"></small>
           </div>
 
           <div class="form-group">
-            <input id="email" name="email" type="email" required>
+            <input id="email" name="email" type="email" placeholder="Deine E-Mail" required>
             <label for="email">Deine E-Mail</label>
+            <small class="field-error"></small>
           </div>
 
           <div class="form-group">
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Deine Nachricht" required></textarea>
             <label for="message">Deine Nachricht</label>
+            <small class="field-error"></small>
           </div>
+
+          <div class="checkbox-group">
+            <input id="privacy" name="privacy" type="checkbox" required>
+            <label for="privacy">
+              Ich habe die Datenschutzhinweise gelesen und bin damit einverstanden,
+              dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden.
+            </label>
+          </div>
+          <small class="field-error checkbox-error" id="privacyError"></small>
 
           <button type="submit" class="btn btn-primary form-btn">
             Nachricht senden

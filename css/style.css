@@ -501,9 +501,7 @@ p {
 .form-group input:focus + label,
 .form-group textarea:focus + label,
 .form-group input:not(:placeholder-shown) + label,
-.form-group textarea:not(:placeholder-shown) + label,
-.form-group input:valid + label,
-.form-group textarea:valid + label {
+.form-group textarea:not(:placeholder-shown) + label {
   top: -8px;
   font-size: 0.72rem;
   color: var(--accent-dark);
@@ -520,10 +518,40 @@ p {
   font-size: 1rem;
 }
 
+.form-group.error input,
+.form-group.error textarea {
+  border-color: #c0392b;
+  background-color: #fff6f6;
+}
+
+.form-group.success input,
+.form-group.success textarea {
+  border-color: #2d7a46;
+}
+
+.field-error {
+  display: block;
+  min-height: 18px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #c0392b;
+  padding-left: 2px;
+}
+
 .form-message {
   min-height: 1.5rem;
-  font-size: 0.92rem;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--accent-dark);
+}
+
+.form-message.success {
+  color: #2d7a46;
+}
+
+.form-message.error {
+  color: #c0392b;
 }
 
 .site-footer {
@@ -624,4 +652,42 @@ textarea:focus-visible {
   .contact-form {
     padding: 24px;
   }
+}
+.hidden-field {
+  display: none;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: -8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.checkbox-group label {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.checkbox-group.error label {
+  color: #c0392b;
+}
+
+.checkbox-error {
+  margin-top: -14px;
+  min-height: 18px;
+}
+
+.form-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
